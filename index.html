@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Agnieszka Zdunek</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/fontello.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" >
+
+
+    $(window).scroll(function(e){
+  var $el = $('.bottom');
+  var isPositionFixed = ($el.css('position') == 'fixed');
+  if ($(this).scrollTop() > 500 && !isPositionFixed){
+    $el.css({'position': 'fixed', 'top': '40px'});
+  }
+  if ($(this).scrollTop() < 500 && isPositionFixed){
+    $el.css({'position': 'static', 'top': '40px'});
+  }
+});
+
+
+
+    jQuery(function($){
+      //zresetuj scrolla
+        $.scrollTo(0);
+        var findMeHeight = $('#find-me-wrapper').height();
+        var bottomHeight = $('#bottom').height();
+
+      $('#skills').click(function(){
+        $('html, body').stop().animate({
+            scrollTop: $('#skills-section').offset().top - findMeHeight - bottomHeight
+        }, 1000);
+
+      });
+      $('#projects').click(function(){
+          $('html, body').stop().animate({
+              scrollTop: $('#projects-wrapper').offset().top - findMeHeight - bottomHeight
+          }, 1000);
+        });
+
+      $('#contact').click(function(){
+        $('html, body').stop().animate({
+            scrollTop: $('#contact-section').offset().top - findMeHeight - bottomHeight
+        }, 1000);
+      });
+    });
+    </script>
+  </head>
+  <body>
+
+     <div id="find-me-wrapper">
+       <div class="text">Find me on:</div>
+       <div id="github" class="icon">
+        <a href="http://github.com/azdunek" target="_blank" class="link"><i class="icon-github-circled"></i></a>
+       </div>
+       <div id="linkedin" class="icon">
+          <a href="http://linkedin.com" target="_blank" class="link"><i class="icon-linkedin-circled"></i></a>
+       </div>
+       <div id="xing" class="icon">
+         <a href="http://xing.com" target="_blank" class="link"><i class="icon-xing"></i></a>
+       </div>
+     </div>
+
+
+     <div id="about-me">
+       <div class="top">
+         <div class="photo"><img src="foto.jpg" id="my-photo"/></div>
+         <img src="bg.jpg" class="background"/>
+          <div class="bubble">
+            <div class="my-description">
+              My name is Agnieszka, I have been studying programming for 8 months on my own. <br>
+              I am still trying to improve my abilities and learn something new.
+            </div>
+          </div>
+       </div>
+
+       <div id="bottom" class="bottom">
+          <div class="menu-item"><a id="skills">Skills</a></div>
+          <div class="menu-item"><a id="projects">Projects</a></div>
+          <div class="menu-item"><a id="contact">Contact</a></div>
+       </div>
+
+     </div>
+
+
+
+  <div class="container">
+
+    <div class="section-wrapper">
+      <div id="skills-section" class="section">
+        <h1>Skills</h1>
+
+          My programming adventure has started 8 months ago, when I have met Java for the first time.<br>
+          I have learned about object oriented programming paradigms, like inheritance, polymorphism, encapsulation and abstract classes and interfaces.<br>
+          For managing changes in my projects, I have learned git tool. All my projects are available on github.<br>
+          While creating this website, I have tried and improved my html5 and css abilities.<br>
+          I can create dektop application with JavaFX framework.<br>
+          I also know domain-specific language SQL to comunicate with database.<br>
+          Now I study selenium - gui test framework.<br>
+
+        <!-- Moją przygodą z programowaniem rozpoczęłam 8 miesięcy temu, gdy poznałam Javę. <br>
+         Od tamtej pory poznałam paradygmaty programowania obiektowego, takie jak dziedziczenie, polimorfizm, enkapsulacja oraz abstrakcyjność. <br>
+         Aby w łatwy sposób zarządzać zmianami w swoich projektach, nauczyłam się narzędzia git, a wszystkie swoje projekty umieściłam na github. <br>
+         Tworząc tę stronę sprawdziłam i udoskonaliłam swoje umiejętności w technologiach html5 i css3. <br>
+         Potrafię tworzyć aplikacje desktopowe z użyciem frameworka JAVAFX. <br>
+         Potrafię także język zapytań sql do komunikacji z bazą danych. <br>
+         Aktualnie uczę się selenium- frameworka do testów gui.<br> -->
+         <div class="icon-box">
+           <img src="img/java.png" class="language-icon"/>
+           <img src="img/javafx.png" class="language-icon"/>
+           <img src="img/html.png" class="language-icon"/>
+           <img src="img/css.png" class="language-icon"/>
+           <img src="img/selenium.png" class="language-icon"/>
+           <img src="img/sql.png" class="language-icon"/>
+           <img src="img/git.png" class="language-icon"/>
+         </div>
+      </div>
+    </div>
+
+    <div class="section-wrapper" id="projects-wrapper">
+      <div id="projects-section" class="section">
+         <h1>Projects</h1>
+
+       <div class="project">
+         <h3>Minesweeper</h3>
+         <div class="minesweeper-description" id="ms-desc1">
+           Minesweeper is refreshed version of popular game, who is well-known by literally everybody. <br/><br/>
+           It's my second desktop application (and most advanced) project created in Java using JavaFX Framework. <br/><br/>
+
+           The rules are same like in typical Minesweeper game, which can be found on every Windows operating system.
+           In my version, default number of mines is ten, but it can be changed easily in code. <br><br/>
+           Player can press the tiles with left mousebutton to reveal the number (representing mines around) or blank space.<br><br/>
+           <img src="img/ms1.png" class="minsweeper-image" id="ms-img1"/>
+         </div>
+
+         <div class="minesweeper-description" id="ms-desc2">
+           With using right mausebutton, player can flag possible mine.<br>
+           If you press mine tile - you immediately lose. <br>
+           <img src="img/msgo.png" class="minsweeper-image" id="ms-img2"/>
+         </div>
+
+
+         <div class="minesweeper-description" id="ms-desc1">
+            If you flag all mines correctly and there are no more possible tiles to reveal - you win!
+            <img src="img/msw.png" class="minsweeper-image" id="ms-img3"/>
+         </div>
+
+      <div id="minesweeper-images">
+            <!-- thumbnail image wrapped in a link -->
+            <a class="visible-hyperlink" href="#img1">
+              <img src="img/minesweeper1.png" class="thumbnail">
+            </a>
+
+            <!-- lightbox container hidden with CSS -->
+            <a href="#_" class="lightbox" id="img1">
+              <img src="img/minesweeper1.png">
+            </a>
+
+            <a class="visible-hyperlink" href="#img2">
+              <img src="img/ms-gameover.png" class="thumbnail">
+            </a>
+
+            <!-- lightbox container hidden with CSS -->
+            <a href="#_" class="lightbox" id="img2">
+              <img src="img/ms-gameover.png">
+            </a>
+
+            <a class="visible-hyperlink" href="#img3">
+              <img src="img/ms-win.png" class="thumbnail">
+            </a>
+
+            <!-- lightbox container hidden with CSS -->
+            <a href="#_" class="lightbox" id="img3">
+              <img src="img/ms-win.png">
+            </a>
+
+          </div>
+
+           <div id="click-to-zoom">
+             (Click on every image to zoom)
+           </div>
+
+           <div class="project-link">
+              Source code is available <a href="https://github.com/azdunek/minesweeper" target="_blank">here</a>
+           </div>
+
+       </div>
+
+       <div class="project">
+         <h3>Hangman</h3>
+          <div class="hangman-description">
+            <div class="hangman-description-content">
+              Everybody knows paper and pencil game named Hangman. <br>
+              It's my first serious Java command line application.  <br><br>
+
+              It works as follows:<br><br>
+
+              One player gives computer the password, it is beeing encrypted and showed in the form of dashes on the console.<br> <br><br>
+              Player two has to guess all the letters. <br>
+
+              Every mistake adds part of hangmans body on gallow.<br> <br>
+              If he is hanging with all his body - you loose. <br> <br> <br>
+              If you guess all the letters- you win! <br> <br>
+
+              This project was good opportunity for me to learn not only object programming principles, but <br>
+              unit testing using JUnit Framework as well.<br> <br> <br> <br>
+
+            </div>
+            <div class="hangman-description-image">
+              <img src="img/hm6.png" id="hangman-img">
+            </div>
+          </div>
+          <div class="project-link">
+            Source code is available <a href="https://github.com/azdunek/hangman" target="_blank">here</a>
+          </div>
+       </div>
+
+        <div class="project">
+          <h3>Tic-tac-toe</h3>
+          <div class="ttt-description">
+            Tic-tac-toe is my first project using JavaFX framework.
+          </div>
+
+          <div id="minesweeper-images">
+                <!-- thumbnail image wrapped in a link -->
+                <a class="visible-hyperlink" href="#ttt-img1">
+                  <img src="img/tictactoe1.png" class="thumbnail">
+                </a>
+
+                <!-- lightbox container hidden with CSS -->
+                <a href="#_" class="lightbox" id="ttt-img1">
+                  <img src="img/tictactoe1.png">
+                </a>
+
+                <a class="visible-hyperlink" href="#ttt-img2">
+                  <img src="img/tictactoe2.png" class="thumbnail">
+                </a>
+
+                <!-- lightbox container hidden with CSS -->
+                <a href="#_" class="lightbox" id="ttt-img2">
+                  <img src="img/tictactoe2.png">
+                </a>
+
+                <a class="visible-hyperlink" href="#ttt-img3">
+                  <img src="img/tictactoe3.png" class="thumbnail">
+                </a>
+
+                <!-- lightbox container hidden with CSS -->
+                <a href="#_" class="lightbox" id="ttt-img3">
+                  <img src="img/tictactoe3.png">
+                </a>
+              </div>
+
+           <div id="click-to-zoom">
+             (Click on every image to zoom)
+           </div>
+
+           <div class="project-link">
+              Source code is available <a href="https://github.com/azdunek/tic-tac-toe-v1" target="_blank">here</a>
+           </div>
+          </div>
+          <div class="project">
+            <h3>Pokémon</h3>
+            <div class="project-description">
+                Pokémon Game is a command-line Java application imitating battles between pokemons trainers and their pokemons.
+            </div>
+            <div class="project-link">
+               Source code is available <a href="https://github.com/azdunek/pokemon-game" target="_blank">here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="contact-section" class="section-wrapper">
+         If you have more questions, contact me: <span>agnieszka95zdunek@gmail.com</span>
+    </div>
+ </div>
+
+    <footer>
+      Copyright © 2020 Agnieszka Zdunek
+    </footer>
+  </body>
+</html>
